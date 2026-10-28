@@ -1,0 +1,19 @@
+project_id = "jihoz"
+
+# Webhook Telegram'dan to'g'ridan-to'g'ri chaqiriladi — JWT yo'q,
+# himoya Telegram'ning secret_token sarlavhasi orqali amalga oshiriladi.
+[functions.telegram-webhook]
+verify_jwt = false
+
+# Yangi chat xabarlari uchun Telegram bildirishnomasi (HOZIR O'CHIRILGAN).
+# Supabase "Database Webhook" orqali chaqiriladi — JWT yo'q,
+# himoya x-notify-secret sarlavhasi orqali amalga oshiriladi.
+[functions.telegram-notify]
+verify_jwt = false
+
+# orders-create va listings-create — JWT talab qilinadi (standart himoya).
+[functions.orders-create]
+verify_jwt = true
+
+[functions.listings-create]
+verify_jwt = true

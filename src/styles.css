@@ -1,0 +1,212 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — Jihoz.uz
+ *
+ * BARCHA ranglar shu yerdagi CSS o'zgaruvchilarida (design tokens).
+ * Kod ichida hardkod hex qiymat yo'q — faqat semantic tokenlar ishlatiladi:
+ *
+ *   --primary            asosiy brend rangi (CTA tugma, narx, link, active nav)
+ *   --highlight          brend urg'usi (yulduz reytingi, logotip, kichik ikonkalar)
+ *   --highlight-inverse  brend urg'usi to'q fonda (hero sarlavhasi)
+ *   --accent             neytral hover/active yuzasi (shadcn semantikasi)
+ *
+ * Radius: kartalar 12px (--radius-xl / --radius-2xl),
+ *         tugma va inputlar 8px (--radius-md / --radius-lg).
+ *
+ * Soyalar deyarli ko'rinmaydi — ajratish 1px chegara bilan bajariladi.
+ * Gradient ishlatilmaydi, faqat tekis ranglar.
+ */
+
+@theme inline {
+  /* Radius: kartalar 12px, tugma/input 8px, ichki elementlar 4px */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 0.75rem;
+  --radius-3xl: 1rem;
+  --radius-4xl: 1rem;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-highlight: var(--highlight);
+  --color-highlight-foreground: var(--highlight-foreground);
+  --color-highlight-inverse: var(--highlight-inverse);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Fon */
+  --background: #f5f7f5;
+  /* Matn */
+  --foreground: #131715;
+  /* Karta foni */
+  --card: #ffffff;
+  --card-foreground: #131715;
+  --popover: #ffffff;
+  --popover-foreground: #131715;
+
+  /* Asosiy brend rangi — CTA tugma, narx, link */
+  --primary: #14604a;
+  --primary-foreground: #ffffff;
+
+  /* Yengil yashil tint — ikonka kataklari, active nav, badge */
+  --secondary: #e7efea;
+  --secondary-foreground: #14604a;
+
+  --muted: #edf1ee;
+  /* Ikkinchi darajali matn */
+  --muted-foreground: #57605b;
+
+  /* Neytral hover yuzasi */
+  --accent: #e9efeb;
+  --accent-foreground: #131715;
+
+  /* Brend urg'usi — yulduz, logotip, kichik ikonkalar */
+  --highlight: #e11d48;
+  --highlight-foreground: #ffffff;
+  /* Xuddi shu urg'u to'q fonda */
+  --highlight-inverse: #fb7185;
+
+  --destructive: #c81e1e;
+  --destructive-foreground: #ffffff;
+
+  /* Chegara chiziqlari */
+  --border: #e1e6e1;
+  --input: #d5dcd6;
+  --ring: #14604a;
+
+  --chart-1: #14604a;
+  --chart-2: #e11d48;
+  --chart-3: #3f7d68;
+  --chart-4: #9f1239;
+  --chart-5: #6b8f81;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #131715;
+  --sidebar-primary: #14604a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #edf1ee;
+  --sidebar-accent-foreground: #131715;
+  --sidebar-border: #e1e6e1;
+  --sidebar-ring: #14604a;
+}
+
+.dark {
+  --background: #0f1211;
+  --foreground: #edf2ee;
+  --card: #161b19;
+  --card-foreground: #edf2ee;
+  --popover: #161b19;
+  --popover-foreground: #edf2ee;
+
+  --primary: #34d399;
+  --primary-foreground: #06231a;
+
+  --secondary: #1e2a25;
+  --secondary-foreground: #8fdcb8;
+
+  --muted: #1a201d;
+  --muted-foreground: #9ba69f;
+
+  --accent: #232c28;
+  --accent-foreground: #edf2ee;
+
+  --highlight: #fb7185;
+  --highlight-foreground: #2a0910;
+  --highlight-inverse: #9f1239;
+
+  --destructive: #f87171;
+  --destructive-foreground: #2a0910;
+
+  --border: #262e2a;
+  --input: #313a35;
+  --ring: #34d399;
+
+  --chart-1: #34d399;
+  --chart-2: #fb7185;
+  --chart-3: #6ee7b7;
+  --chart-4: #fda4af;
+  --chart-5: #a7f3d0;
+
+  --sidebar: #161b19;
+  --sidebar-foreground: #edf2ee;
+  --sidebar-primary: #34d399;
+  --sidebar-primary-foreground: #06231a;
+  --sidebar-accent: #232c28;
+  --sidebar-accent-foreground: #edf2ee;
+  --sidebar-border: #262e2a;
+  --sidebar-ring: #34d399;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  /* Ikonkalar bir xil qalinlikda (lucide standarti 2px) */
+  svg.lucide {
+    stroke-width: 2;
+  }
+}
+
+/*
+ * Flat dizayn: soyalar deyarli ko'rinmaydi.
+ * Ajratish 1px chegara orqali bajariladi, shuning uchun barcha
+ * shadow utility'larini o'chiramiz (utilities layer'dan ustun, unlayered qoida).
+ */
+.shadow-xs,
+.shadow-sm,
+.shadow,
+.shadow-md,
+.shadow-lg,
+.shadow-xl,
+.shadow-2xl,
+.shadow-card,
+.shadow-lift {
+  box-shadow: none !important;
+}
